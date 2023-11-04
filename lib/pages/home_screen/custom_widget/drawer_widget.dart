@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DrawerCustomWidget extends StatelessWidget {
-  const DrawerCustomWidget({super.key});
+  const DrawerCustomWidget({super.key, required this.onCategoryClick});
+
+  final Function onCategoryClick;
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +29,27 @@ class DrawerCustomWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                Icon(Icons.menu, size: 30, weight: 15),
-                SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  "Categories",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+          InkWell(
+            onTap: () {
+              onCategoryClick();
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Icon(Icons.menu, size: 30, weight: 15),
+                  SizedBox(
+                    width: 15,
                   ),
-                ),
-              ],
+                  Text(
+                    "Categories",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const Padding(
