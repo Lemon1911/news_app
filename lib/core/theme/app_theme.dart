@@ -16,5 +16,17 @@ class AppTheme {
         ),
       ),
     ),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 22,
+        color: Colors.white,
+      ),
+      titleMedium: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 18,
+        color: Colors.white,
+      ),
+    ),
   );
 }
